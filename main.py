@@ -74,16 +74,12 @@ AND age BETWEEN 2 AND 7
 ORDER BY name ASC;
 """, conn2)
 
-# STEP 8 (fixed for autograder)
+# STEP 8
 df_4_oldest = pd.read_sql("""
 SELECT name, age, breed
-FROM (
-    SELECT *
-    FROM dogs
-    ORDER BY age DESC
-    LIMIT 4
-)
-ORDER BY name ASC;
+FROM dogs
+ORDER BY age DESC
+LIMIT 4;
 """, conn2)
 
 
